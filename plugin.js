@@ -5,9 +5,10 @@ CKEDITOR.plugins.add( 'closebtn', {
     init: function( editor ) {
         editor.addCommand( 'closetoolbar', {
         	exec : function(editor){
+                CKEDITOR.instances[editor.name].fire("closebtn");
                 CKEDITOR.instances[editor.name].updateElement();
                 CKEDITOR.instances[editor.name].destroy();
-        	} 
+        	}
     });
 
 
